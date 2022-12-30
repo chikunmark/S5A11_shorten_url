@@ -13,6 +13,7 @@ const app = express()
 // app.engine('handlebars', exphbs({ defaultLayout: 'main' })) // 舊版本寫法
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' })) // 新版本寫法
 app.set('view engine', 'handlebars')
+app.use(express.static('pics'))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
