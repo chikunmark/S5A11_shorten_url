@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // 設定連線到 mongoDB
+// mongoose.set('strictQuery', false) // @6.8.2 才需要的，還不知有啥用
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 
