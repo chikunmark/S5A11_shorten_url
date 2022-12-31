@@ -13,8 +13,8 @@ git clone https://github.com/chikunmark/S5A11_shorten_url.git
 ```
 cd S5A11_shorten_url
 ```
-4. 本專案有使用環境變數，並使用 mongoose 連接 MongoDB，請參考下圖，  
-自行在當下目錄，建立連結到您的 MongoDB 的 URI  
+4. 本專案有使用環境變數，並使用 mongoose 連接 MongoDB，  
+請參考下圖，自行在當下目錄，建立連結到您的 MongoDB 的 URI  
 (變數名請用 MONGODB_URI)  
 ![.env demo](pics/example1-2.jpg)
 
