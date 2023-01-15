@@ -1,14 +1,12 @@
+////////////////// test copy 2
 const select = DOM => document.querySelector(DOM)
 
-select('#btn-copy').addEventListener('click', e => {
-  // 建立 Range 物件
-  const range = document.createRange()
-  const texts = select('#shortURL')
-  range.selectNode(texts)
-  // 取得 Selection 物件
-  const selection = window.getSelection()
-  selection.removeAllRanges()
-  selection.addRange(range)
-  document.execCommand('copy')
-  selection.removeAllRanges()
+select('#btn-copy').addEventListener('click', () => {
+  navigator.clipboard
+    .writeText(select('#shortURL').innerHTML)
+    .then(() => alert('複製成功'))
+    .catch(err => {
+      alert('出錯了，還請重新試試')
+      console.alert(err)
+    })
 })
