@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const originURL = req.body.originURL
-  console.log('originURL是：', originURL)
+  // console.log('originURL是：', originURL)
 
   // 結果還是沒有試成 .exist()，或是把 DB 內的 value 取出來用，完成後繼續試
   url_schema
@@ -18,12 +18,12 @@ router.post('/', (req, res) => {
     .then(urlArray => {
       const filtered = urlArray.find(url => url.originURL.includes(originURL))
       // (上1) 不知為何，當 originalURL === ''，find() 會回傳第一個 element -> 得再查了...
-      console.log(Boolean(filtered)) // 測試 true/false
+      // console.log(Boolean(filtered)) // 測試 true/false
       if (filtered) {
         return res.render('index', { shortURL: filtered.shortURL })
       } else {
         const urlResult = shortenStep(originURL)
-        console.log(urlResult)
+        // console.log(urlResult)
         return url_schema
           .create(urlResult) // 寫得很爛，命名再改好一點
           .then(res.render('index', { shortURL: urlResult.shortURL }))

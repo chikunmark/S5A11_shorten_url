@@ -13,6 +13,7 @@ const app = express()
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' })) // 安裝 hbs 新版本寫法
 app.set('view engine', 'handlebars')
 app.use(express.static('pics'))
+app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(routes) // 使用 routes 導入所有路由設定

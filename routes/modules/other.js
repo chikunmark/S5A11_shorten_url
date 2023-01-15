@@ -10,7 +10,7 @@ router.get('/favicon.ico', (req, res) => {
 
 router.get('/:short', (req, res) => {
   const short = `http://localhost:3000/${req.params.short}`
-  console.log(short)
+  // console.log(short)
   // if (req.params.short === '') {
   //   return res.render('index')
   // } else {
